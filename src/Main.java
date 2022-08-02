@@ -1,3 +1,4 @@
+import online.edsonabarros.desafio.dominio.Conteudo;
 import online.edsonabarros.desafio.dominio.Curso;
 import online.edsonabarros.desafio.dominio.Mentoria;
 
@@ -22,6 +23,9 @@ public class Main {
         mentoria.setTitulo("Mentoria Java");
         mentoria.setDescricao(" Descrição Mentoria Java");
         mentoria.setData(LocalDate.now());
+
+        // polimorfismo - instanciar com mais de uma forma.
+        Conteudo conteudo = new Curso();
 
         System.out.println(curso1);
         System.out.println(curso2);
