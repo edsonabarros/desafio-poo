@@ -1,6 +1,4 @@
-import online.edsonabarros.desafio.dominio.Conteudo;
-import online.edsonabarros.desafio.dominio.Curso;
-import online.edsonabarros.desafio.dominio.Mentoria;
+import online.edsonabarros.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -26,10 +24,42 @@ public class Main {
 
         // polimorfismo - instanciar com mais de uma forma.
         Conteudo conteudo = new Curso();
+//
+//        System.out.println(curso1);
+//        System.out.println(curso2);
+//        System.out.println(mentoria);
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição do Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devEdson = new Dev();
+        devEdson.setNome("Edson");
+        devEdson.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos Edson"+ devEdson.getConteudoInscritos());
+        devEdson.progredir();
+        devEdson.progredir();
+        System.out.println("Conteúdos inscritos Edson"+ devEdson.getConteudoInscritos());
+        System.out.println("Conteúdos concluidos Edson"+ devEdson.getConteudoConcluidos());
+        System.out.println("XP: "+ devEdson.calcularTotalXp());
+
+        System.out.println("-----------------");
+
+        Dev devJoao = new Dev();
+        devJoao.setNome("João");
+        devJoao.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos João"+ devJoao.getConteudoInscritos());
+        devJoao.progredir();
+        devJoao.progredir();
+        devJoao.progredir();
+        System.out.println("Conteúdos inscritos João"+ devJoao.getConteudoInscritos());
+        System.out.println("Conteúdos concluidos João"+ devJoao.getConteudoConcluidos());
+        System.out.println("XP: "+ devJoao.calcularTotalXp());
+
+
 
     }
 }
